@@ -90,11 +90,11 @@
                     }
 				}, false);
 
-				xhr.addEventListener("error", function(err){
-					alert("Could not complete the request");
-				}, false);
-				xhr.open("GET", " http://api.openweathermap.org/data/2.5/weather?q="+location+"&appid=78e6d8a3f38262e559c66672d3ad2bf1", true);
-				xhr.send();
+// 				xhr.addEventListener("error", function(err){
+// 					alert("Could not complete the request");
+// 				}, false);
+// 				xhr.open("GET", " http://api.openweathermap.org/data/2.5/weather?q="+location+"&appid=78e6d8a3f38262e559c66672d3ad2bf1", true);
+// 				xhr.send();
 			}
 			else{
 				alert("Unable to fetch the location and weather data.");
