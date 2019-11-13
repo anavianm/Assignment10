@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather</title>
+    <link rel="stylesheet" href="HomePage.css">
+    <script>
+		function getWeatherForLocation(){
+			var location = document.getElementById("location").value;
+			if (location != null){
+				var xhr = new XMLHttpRequest();
+				xhr.addEventListener("load", function() {
+					var response = JSON.parse(xhr.responseText);
+
+					console.log(response);
+                    var weatherData = {
+                        city: document.getElementById("#city"),
+                        description: document.getElementById("#description"),
+                        temperature: document.getElementById("#temperature"),
+                        clothing: document.getElementById("#clothing"),
+                        umbrella: document.getElementById("u")
+                    };
+					weatherData.city.innerHTML = response.name;
+                    var weathobj = response.weather;
+                    var desc = weathobj.pop();
+                    console.log(desc.description);
+                    weatherData.description.innerHTML = desc.description;
+                    weatherData.temperature.innerHTML = Math.round(response.main.temp * 9/5 - 459.67) + "";	
+                    
+                    if (desc.id == 951 ||
+                        desc.id == 952 ||
+                        desc.id == 953 ||
+                        desc.id == 954 ||
+                        desc.id == 955 ||
+                        desc.id == 800){
+                        document.body.style.backgroundImage = 'url("Images/tallbuilding.jpg")';
+                    }
+                    //else if (desc.id > 900){
+                      //  document.body.style.backgroundImage = 'url("Images/badweather.jpg")';
+                    //}
+                   
+                    else if (desc.id == 801||
+                             desc.id == 802||
+                             desc.id == 803){
+                        document.body.style.backgroundImage = 'url("Images/brokenclouds.jpg")';
+                    }
+                    else if (desc.id == 501||
+                             desc.id == 521||
+                             desc.id == 502||
+                             desc.id == 503||
+                             desc.id == 522||
+                             desc.id == 531){
+                        document.getElementById("u").innerHTML = "It's Raining Hard. Don't Forget an Umbrella";
+                        document.body.style.backgroundImage = 'url("Images/showerrain.jpg")';
+                    }
+                    else if (desc.id == 300||
+                             desc.id == 301||
+                             desc.id == 302||
+                             desc.id == 310||
+                             desc.id == 311||
+                             desc.id == 312||
+                             desc.id == 313||
+                             desc.id == 314||
+                             desc.id == 321||
+                            desc.id == 500){
+                        document.getElementById("u").innerHTML = "It's raining! Don't forget your umbrella!";
+                        document.body.style.backgroundImage = 'url("Images/rain.jpg")';
+                    }
+                    else if (desc.id == 200||
+                            desc.id == 201||
+                            desc.id == 202||
+                            desc.id == 210||
+                            desc.id == 211||
+                            desc.id == 212||
+                            desc.id == 221||
+                            desc.id == 230||
+                            desc.id == 231||
+                            desc.id == 232){
+                        document.getElementById("u").umbrella.innerHTML = "It's raining! Don't forget your umbrella!";
+                        document.body.style.backgroundImage = 'url("Images/thunderstorm.jpg")';
+                    }
+                    else if (desc.id == 600||
+                            desc.id == 601||
+                            desc.id == 602){
+                        document.body.style.backgroundImage = 'url("Images/snow.jpg")';
+                    }
+                    else if (desc.id == 701 ||
+                             desc.id == 741){
+                        document.body.style.backgroundImage = 'url("Images/mist.jpg")';
+                    }
+				}, false);
+
+				xhr.addEventListener("error", function(err){
+					alert("Could not complete the request");
+				}, false);
+				xhr.open("GET", " http://api.openweathermap.org/data/2.5/weather?q="+location+"&appid=78e6d8a3f38262e559c66672d3ad2bf1", true);
+				xhr.send();
+			}
+			else{
+				alert("Unable to fetch the location and weather data.");
+			}						
+		}
+    </script>        
+
+</head>
+<body>
+    <div class="left">
+    <ul>
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="About.html">About</a></li>
+    </ul>
+    </div>
+<div class='content'>
+    <h1 id="heading">Weather</h1>
+    <input class="input1" placeholder="Input Your City" id="location">
+    <input type="button" class="button buttonedge" value="Submit Location" onclick="getWeatherForLocation();">
+    <p class="hometext place" id="#city"></p>
+    <p class="hometext temp" id="#temperature"></p>
+    <p class="hometext" id="#description"></p>
+    <p class="hometext wear" id="u"></p>
+</div>
+
+    </body></html>

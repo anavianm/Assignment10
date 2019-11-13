@@ -1,0 +1,167 @@
+    
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #566f97;
+  top: 0;
+  width: 200px;
+  height: 900px;
+  
+}
+
+
+li a {
+  display: block;
+  color: white;
+  text-align: justify;
+  padding: 20px 32px;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+li a:hover {
+  background-color: #3f314a;
+    }
+
+li{
+  margin-bottom: 0px;
+    }
+
+body{
+    padding: 200px;
+    margin: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 2em;
+    text-shadow: 0 0 10px #000;
+    color: #fff;
+    background-image: url("Images/nyafternoon.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+.active{
+    background-color: #3f314a;
+}
+div.content{
+    position:relative;
+    left:280px;
+    z-index:0;
+}
+.left {
+  position:fixed;
+  padding: 0px;
+  top: 0; left: 0; 
+  height:100%; width:50px; 
+  background:darkslategray;
+  transition: width ease .5s;
+  z-index: 1;
+
+}
+    
+section{
+  min-height: 100%;
+}
+
+h1{
+  font-size: 2em;
+  padding: 0 0.3em;
+  line-height: 1em;
+}
+
+a{
+  color: #fff;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  font-size: 12px;
+  text-align:left;
+  float: left;
+  margin-left: 250px;
+}
+
+#temperature{
+  text-decoration: none;
+  border-bottom: 0.05em dotted white;
+}
+.hometext{
+    font-family: sans-serif;
+    color:#fff;
+    text-transform: capitalize;
+    line-height: 2px;
+    
+}
+
+.place{
+    font-size: 60px;
+    text-transform: 
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.temp{
+    font-size: 100px;
+}
+
+.degree{
+    font-size: 30px;
+}
+.button {
+    background-color: white; /* Green */
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonedge{
+    border-radius: 12px;
+}
+.input1{
+    padding: 15px;
+    border-radius: 2px;
+}
+.wear{
+    font-size: 16px;
+}
