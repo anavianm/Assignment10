@@ -8,7 +8,7 @@
 			var location = document.getElementById("location").value;
 			if (location != null){
 				var xhr = new XMLHttpRequest();
-				xhr.open('GET',"http://api.openweathermap.org/data/2.5/weather?q="+location+"&appid=78e6d8a3f38262e559c66672d3ad2bf1", true);
+				xhr.open('GET',"https://api.openweathermap.org/data/2.5/weather?q="+location+"&appid=78e6d8a3f38262e559c66672d3ad2bf1", true);
 				xhr.addEventListener("load", function() {
 					var response = JSON.parse(xhr.responseText);
 
@@ -93,7 +93,7 @@
 				xhr.addEventListener("error", function(err){
 					alert("Could not complete the request");
 				}, false);
-				xhr.open("GET", " http://api.openweathermap.org/data/2.5/weather?q="+location+"&appid=78e6d8a3f38262e559c66672d3ad2bf1", true);
+				xhr.open("GET", " https://api.openweathermap.org/data/2.5/weather?q="+location+"&appid=78e6d8a3f38262e559c66672d3ad2bf1", true);
 				xhr.send();
 			}
 			else{
